@@ -6,7 +6,9 @@ import networkx as nx
 import pathlib
 from azure.storage.blob import BlobServiceClient
 from dotenv import load_dotenv
+
 load_dotenv()
+
 AZURE_CONNECTION_STRING = os.getenv("AZURE_CONNECTION_STRING")
 CONTAINER_NAME = "grafo"
 BLOB_NAME = "lima.graphml"
