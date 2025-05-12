@@ -6,6 +6,7 @@ import networkx as nx
 import pathlib
 from azure.storage.blob import BlobServiceClient
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 
