@@ -6,4 +6,3 @@ networkx~=3.2
 shapely
 pandas
 azure-storage-blob
-os
