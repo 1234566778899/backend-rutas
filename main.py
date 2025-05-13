@@ -10,6 +10,7 @@ import os
 
 load_dotenv()
 
+print("Verificando si el grafo está descargado...")
 AZURE_CONNECTION_STRING = os.getenv("AZURE_CONNECTION_STRING")
 CONTAINER_NAME = "grafo"
 BLOB_NAME = "lima.graphml"
