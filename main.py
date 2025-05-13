@@ -8,7 +8,6 @@ from azure.storage.blob import BlobServiceClient
 from dotenv import load_dotenv
 import os
 
-
 load_dotenv()
 print("Verificando si el grafo está descargado 3...")
 AZURE_CONNECTION_STRING = os.getenv("AZURE_CONNECTION_STRING")
