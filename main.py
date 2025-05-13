@@ -14,6 +14,7 @@ AZURE_CONNECTION_STRING = os.getenv("AZURE_CONNECTION_STRING")
 CONTAINER_NAME = "grafo"
 BLOB_NAME = "lima.graphml"
 LOCAL_PATH = pathlib.Path("data/lima.graphml")
+
 LOCAL_PATH.parent.mkdir(parents=True, exist_ok=True)
 if not LOCAL_PATH.exists():
     print("Descargando grafo desde Azure...")
