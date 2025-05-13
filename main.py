@@ -17,14 +17,19 @@ BLOB_NAME = "lima.graphml"
 LOCAL_PATH = pathlib.Path("data/lima.graphml")
 
 LOCAL_PATH.parent.mkdir(parents=True, exist_ok=True)
-if not LOCAL_PATH.exists():
-    print("Descargando grafo desde Azure...")
-    blob_service_client = BlobServiceClient.from_connection_string(AZURE_CONNECTION_STRING)
-    blob_client = blob_service_client.get_blob_client(container=CONTAINER_NAME, blob=BLOB_NAME)
 
-    with open(LOCAL_PATH, "wb") as f:
-        f.write(blob_client.download_blob().readall())
-    print("Grafo descargado.")
+try:
+    if not LOCAL_PATH.exists():
+        print("Descargando grafo desde Azure...")
+        blob_service_client = BlobServiceClient.from_connection_string(AZURE_CONNECTION_STRING)
+        blob_client = blob_service_client.get_blob_client(container=CONTAINER_NAME, blob=BLOB_NAME)
+
+        with open(LOCAL_PATH, "wb") as f:
+            f.write(blob_client.download_blob().readall())
+        print("Grafo descargado.")
+except Exception as e:
+    print("❌ Error al descargar el grafo:", e)
+
 
 app = FastAPI()
 print("Cargando grafo...")
