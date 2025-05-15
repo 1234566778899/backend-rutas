@@ -37,7 +37,7 @@ except Exception as e:
 app = FastAPI()
 print("Cargando grafo...")
 if os.path.exists("data/lima.graphml") and os.path.getsize("data/lima.graphml") > 0:
-    G = ox.load_graphml("data/lima.graphml")
+    G = ox.project_graph(ox.load_graphml("data/lima.graphml"))
 else:
     print("El archivo lima.graphml está vacío o no existe.")
 print("Grafo cargado.")
