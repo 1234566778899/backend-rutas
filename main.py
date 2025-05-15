@@ -7,6 +7,9 @@ import pathlib
 from azure.storage.blob import BlobServiceClient
 from dotenv import load_dotenv
 import os
+import logging
+logging.basicConfig(level=logging.INFO)
+logging.info("La app ha iniciado correctamente")
 
 
 load_dotenv()
@@ -33,7 +36,10 @@ except Exception as e:
 
 app = FastAPI()
 print("Cargando grafo...")
-G = ox.load_graphml(pathlib.Path("data/lima.graphml"))
+if os.path.exists("data/lima.graphml") and os.path.getsize("data/lima.graphml") > 0:
+    G = ox.load_graphml("data/lima.graphml")
+else:
+    print("El archivo lima.graphml está vacío o no existe.")
 print("Grafo cargado.")
 
 class Coordinate(BaseModel):
