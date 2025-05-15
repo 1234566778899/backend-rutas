@@ -1,7 +1,7 @@
 fastapi
 uvicorn[standard]
 gunicorn
-osmnx==1.7.1
+osmnx>=1.9.1
 networkx~=3.2
 shapely
 pandas
