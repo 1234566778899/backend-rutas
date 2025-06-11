@@ -11,7 +11,6 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logging.info("La app ha iniciado correctamente")
 
-
 load_dotenv()
 print("Verificando si el grafo está descargado 3...")
 AZURE_CONNECTION_STRING = os.getenv("AZURE_CONNECTION_STRING")
