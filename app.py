@@ -24,7 +24,7 @@ def cargar_o_descargar_grafo():
         ox.save_graphml(G, GRAPH_PATH)
         return G
 
-def penalizar_grafo(G, puntos_peligrosos, radio_m=50):
+def penalizar_grafo(G, puntos_peligrosos, radio_m=100):
     G_mod = G.copy()
     nodos_a_eliminar = set()
 
