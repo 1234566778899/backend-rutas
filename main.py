@@ -20,6 +20,7 @@ LOCAL_PATH = pathlib.Path("data/lima.graphml")
 
 LOCAL_PATH.parent.mkdir(parents=True, exist_ok=True)
 
+
 try:
     if not LOCAL_PATH.exists():
         print("Descargando grafo desde Azure...")
